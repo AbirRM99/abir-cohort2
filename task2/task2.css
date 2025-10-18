@@ -1,0 +1,38 @@
+@font-face {
+  font-family: travel;
+  src: url(./The\ Last\ Shuriken.ttf);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+}
+#main {
+  height: 100%;
+  width: 100%;
+  background-image: url(https://images.unsplash.com/photo-1558981403-c5f9899a28bc?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1170);
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+  padding: 40px;
+}
+h1 {
+  font-family: travel;
+  font-size: 100px;
+  color: burlywood;;
+}
+button {
+  font-size: 20px;
+  padding: 10px 20px;
+  background-color: greenyellow;
+  color: rgb(0, 0, 0);
+  border: 1px solid black;
+  font-weight: 600;
+  border-radius: 5px;
+}
