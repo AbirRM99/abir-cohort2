@@ -1,10 +1,88 @@
+@font-face{
+  font-family: apple;
+  src: url(../sf-pro-text_regular.woff2);
+}
+
 *{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 html, body {
   height: 100%;
   width: 100%;
+}
+#main{
+  height: 100%;
+  width: 100%;
+  background-color: white;
+}
+#nav{
+  height: 60px;
+  width: 100%;
+  background-color: rgb(42, 41, 41);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+}
+#nav a{
+  color: white;
+  font-weight: 500;
+  text-decoration: none;
+}
+#center{
+  height: 80%;
+  width: 100%;
+  background-color: black;
+  background-size:contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  text-align: center;
+  padding: 50px;
+}
+#center img{
+  background-size:cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 800px;
+  height: 323px;
+  position: relative;
+}
+#center h1{
+  color: white;
+  font-size: 60px;
+  font-weight: 600;
+  font-family: apple;
+}
+#center h5{
+  color: white;
+  font-size: 40px;
+  font-weight: 300;
+}
+#links{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  padding: 20px;
+}
+#links button{
+  background-color: royalblue;
+  color: white;
+  padding: 15px 24px;
+  border-radius: 50px;
+  font-weight: 300;
+  border: none;
+  font-size: 20px;
+}
+#box{
+  position: absolute;
+  width: 100%;
+  height: 100px;
+  background-color: black;
+  bottom: 318px;
+  left: 0;
 }
