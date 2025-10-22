@@ -1,0 +1,104 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+}
+main{
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  display: grid;
+  grid-template-columns:1fr 300px 1fr ;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 15px;
+  padding: 15px;
+  grid-template-areas: "left-top top-center top-right"
+                       "left-top center bottom-right"
+                       "left-bottom left-bottom bottom-right";
+ 
+}
+#left-top{
+  background-color: aqua;
+  grid-area: left-top;
+  border-radius: 30px;
+  overflow: hidden;
+}
+#left-bottom{
+  background-color: rosybrown;
+  grid-area: left-bottom;
+  border-radius: 30px;
+  overflow: hidden;
+
+  
+}
+#bottom-right{
+  background-color: blueviolet;
+  grid-area: bottom-right;
+  border-radius: 30px;
+  overflow: hidden;
+
+}
+#center{
+  background-color: lawngreen;
+  grid-area: center;
+  border-radius: 30px;
+  overflow: hidden;
+
+}
+#top-center{
+  background-color: fuchsia;
+  grid-area: top-center;
+  border-radius: 30px;
+  overflow: hidden;
+
+}
+#top-right{
+  background-color: peru;
+  grid-area: top-right;
+  border-radius: 30px;
+  overflow: hidden;
+
+}
+#left-top img{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+#left-bottom img{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+#center img{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+#top-center img{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+#top-right img{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+#bottom-right img{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
