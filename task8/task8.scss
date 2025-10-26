@@ -1,0 +1,59 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+}
+main{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  gap: 20px;
+  background-color: aquamarine;
+
+  section{
+    height: 100%;
+    flex-grow: 1;
+    background-color: crimson;
+          background-size: cover;
+      background-position: center;
+    position: relative;
+    
+
+  }
+  section:hover{
+    flex-grow: 1.8;
+    transition: all 0.7s cubic-bezier(0.19, 1, 0.22, 1);
+    cursor: pointer;
+    border-radius: 30px;
+  }
+      section:nth-child(1){
+      background-image: url(../images/deer.avif);
+    }
+      section:nth-child(2){
+      background-image: url(../images/doggy.avif);
+    }
+      section:nth-child(3){
+      background-image: url(https://images.unsplash.com/photo-1760720232713-a60c6a8fb981?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwxMHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=60&w=600);
+    }
+      section:nth-child(4){
+      background-image: url(https://images.unsplash.com/photo-1760835252185-4d5ea03a774a?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwxMTF8fHxlbnwwfHx8fHw%3D&auto=format&fit=crop&q=60&w=600);
+    }
+      section:nth-child(5){
+      background-image: url(https://images.unsplash.com/photo-1760720221487-5a8b332a2078?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwyMTB8fHxlbnwwfHx8fHw%3D&auto=format&fit=crop&q=60&w=600);
+    }
+    section h1{
+      color: black;
+     position: absolute;  
+     bottom: 10px;
+     left: 70px;
+     padding: 20px;
+
+    
+    }
+}
