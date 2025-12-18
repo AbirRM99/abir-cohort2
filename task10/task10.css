@@ -1,0 +1,45 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
+body{
+    background-color: #111;
+}
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 70px;
+}
+.nav1{
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+.nav1 img{
+    height: 42px;
+}
+.nav1 h4{
+    font-family: monospace;
+    font-size: 20px;
+    font-weight: 100;
+}
+.nav2{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.nav2 img{
+    height: 30px;
+    border-radius: 50%;
+    width: 30px;
+}

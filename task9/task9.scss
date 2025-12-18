@@ -1,8 +1,12 @@
+@font-face {
+  font-family: fakee;
+  src: url(../fonts/63cffc0a3942456e003bc265_Chillax-Regular.woff);
+}
 *{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: fakee;
 }
 
 html, body {
@@ -199,7 +203,6 @@ main{
       text-transform: uppercase;
     }
   }
-
   section.view5{
     @include flex-column(2rem);
     width: 100%;
@@ -326,6 +329,81 @@ main{
       }
     }
   }
+  section.view6{
+    width: 100%;
+    padding: 1rem;
+    @include flex-column(1rem);
+
+    .top{
+      width: 100%;
+      img{
+        width: 100%;
+        border-radius: 0.7rem;
+      }
+    }
+        .bottom{
+      width: 100%;
+      background-color: #292929;
+      @include flex-column(3rem);
+      padding: 2rem;
+      border-radius: 10px;
+
+      h1{
+        font-weight: 200;
+        font-size: 2.2rem;
+        text-transform: uppercase;
+        margin: -30px 0 0 0;
+        }
+      p{
+          font-weight: 300;
+          font-size: 1.1rem;
+          opacity: 0.6;
+      } 
+
+      .icon{
+        display: flex;
+        gap: 10px;
+        font-weight: 300;
+        font-size: 1.1rem;
+        margin: 20px 0 0 0;
+      }
+  }
+  }
+  section.view7{
+    width: 92%;
+    background-color: #CBB86C;
+    padding: 2rem;
+    @include flex-column(1rem);
+    border-radius: 10px;
+
+    .top{
+      p{
+        font-weight: 300;
+        font-size: 1rem;
+        opacity: 0.6;
+        color: black;
+      }
+
+      h1{
+        font-weight: 200;
+        font-size: 2.7rem;
+        text-transform: uppercase;
+        margin-top: 10px;
+        color: #1d1d1d;
+      }
+    }
+    .bottom{
+      .icun{
+        display: inline-block;
+        align-items: center;
+        background-color: #1b1b1b;
+        color: #fff;
+        padding: 1rem 8rem;
+        border-radius: 10px;
+        transition: background 0.3s ease;
+      }
+    }
+  }
 }
 
 @media (min-width:900px){
@@ -408,6 +486,40 @@ main{
     section.view5{
       flex-direction: row;
       padding: 1rem 4rem;
+    }
+    section.view6{
+      flex-direction: row;
+      padding: 1rem 4rem;
+      
+      .bottom{
+        padding: 4rem;
+        h1{
+          margin: -30px 0 0 0;
+        }
+        .icon{
+          margin: 130px 0 0 0;
+        }
+      }
+    }
+    section.view7{
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-end;
+      padding: 4rem;
+
+      .top{
+        h1{
+          font-size: 4rem;
+          font-weight: 100px;
+          white-space: initial;
+        }
+      }
+      .bottom{
+        .icun{
+          padding: 1rem 3rem;
+          white-space: nowrap;
+        }
+      }
     }
   }
 }
