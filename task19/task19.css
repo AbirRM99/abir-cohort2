@@ -1,0 +1,29 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  background-color: black;
+}
+
+:root {
+  --x: 400px;
+  --y: 400px;
+}
+
+body {
+  background-image: url(https://images.unsplash.com/photo-1761839259946-2d80f8e72e18?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDF8MHxmZWF0dXJlZC1waG90b3MtZmVlZHw5Mnx8fGVufDB8fHx8fA%3D%3D);
+  background-size: cover;
+}
+
+.box {
+  height: 100%;
+  width: 100%;
+  background: radial-gradient(150px at var(--x) var(--y), rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.902));
+}
