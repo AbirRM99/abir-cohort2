@@ -121,43 +121,119 @@ function todoList() {
 todoList()
 
 
-function dailyPlanner(){
+function dailyPlanner() {
     var dayPlanner = document.querySelector('.day-planner')
 
-var dayPlanData = JSON.parse(localStorage.getItem('dayPlanData')) || {}
+    var dayPlanData = JSON.parse(localStorage.getItem('dayPlanData')) || {}
 
-var hours = Array.from({ length: 18 }, (_, idx) => `${6 + idx}:00 - ${7 + idx}:00`)
-var wholeDaySum = ''
-hours.forEach(function (elem, idx) {
+    var hours = Array.from({ length: 18 }, (_, idx) => `${6 + idx}:00 - ${7 + idx}:00`)
+    var wholeDaySum = ''
+    hours.forEach(function (elem, idx) {
 
-    var savedData = dayPlanData[idx] || ''
+        var savedData = dayPlanData[idx] || ''
 
-    wholeDaySum = wholeDaySum + `<div class="day-planner-time">
+        wholeDaySum = wholeDaySum + `<div class="day-planner-time">
                     <p>${elem}</p>
                     <input id=${idx} type="text" placeholder="..." value=${savedData}>
                 </div>`
-})
-
-
-dayPlanner.innerHTML = wholeDaySum
-
-
-var dayPlannerInput = document.querySelectorAll('.day-planner input')
-
-dayPlannerInput.forEach(function (elem) {
-    elem.addEventListener('input', function () {
-        dayPlanData[elem.id] = elem.value
-
-        localStorage.setItem('dayPlanData', JSON.stringify(dayPlanData))
-
     })
-})
+
+
+    dayPlanner.innerHTML = wholeDaySum
+
+
+    var dayPlannerInput = document.querySelectorAll('.day-planner input')
+
+    dayPlannerInput.forEach(function (elem) {
+        elem.addEventListener('input', function () {
+            dayPlanData[elem.id] = elem.value
+
+            localStorage.setItem('dayPlanData', JSON.stringify(dayPlanData))
+
+        })
+    })
 }
 dailyPlanner()
 
-async function fetchQuote(){
-    let response = await fetch('https://api.quotable.io/quotes/random')
-    console.log(response);
-    
+function motivationalQuotePage() {
+
+    var motivationQuote = document.querySelector('.motivation-2 h1')
+    var motivationAuthor = document.querySelector('.motivation-3 h2')
+
+    async function fetchQuote() {
+        let response = await fetch('https://api.quotable.io/quotes/random')
+        let data = await response.json()
+        motivationQuote.innerHTML = data[0].content
+        motivationAuthor.innerHTML = '- ' + data[0].author
+
+    }
+    fetchQuote()
 }
-fetchQuote()
+motivationalQuotePage()
+
+function pomodoroTimer(){
+    let timer = document.querySelector('.pomo-timer h1')
+var startbtn = document.querySelector('.pomo-timer .start-timer')
+var pausebtn = document.querySelector('.pomo-timer .pause-timer')
+var resetbtn = document.querySelector('.pomo-timer .reset-timer')
+var session = document.querySelector('.pomodoro-fullpage .session')
+var isWorkSession = true
+
+let totalSeconds = 1500
+var timerInterval = null
+
+function updateTime() {
+    let minutes = Math.floor(totalSeconds / 60)
+    let seconds = totalSeconds % 60
+
+    timer.innerHTML = `${String(minutes).padStart('2', '0')}:${String(seconds).padStart('2', '0')}`
+}
+
+function startTimer() {
+    clearInterval(timerInterval)
+    if (isWorkSession) {
+        timerInterval = setInterval(() => {
+            if (totalSeconds > 0) {
+                totalSeconds--
+                updateTime()
+            } else {
+                isWorkSession = false
+                clearInterval(timerInterval)
+                timer.innerHTML = '05:00'
+                session.innerHTML = 'Break Time'
+                session.style.backgroundColor = 'rgb(0, 179, 255)'
+                totalSeconds = 5 * 60
+            }
+        }, 1000);
+    }
+    else {
+        timerInterval = setInterval(() => {
+            if (totalSeconds > 0) {
+                totalSeconds--
+                updateTime()
+            } else {
+                isWorkSession = true
+                clearInterval(timerInterval)
+                timer.innerHTML = '25:00'
+                session.innerHTML = 'Work Session'
+                session.style.backgroundColor = 'rgb(9, 138, 89)'
+                totalSeconds = 25 * 60
+            }
+        }, 1000);
+    }
+
+}
+function pauseTimer() {
+    clearInterval(timerInterval)
+}
+function resetTimer() {
+    clearInterval(timerInterval)
+    totalSeconds = 1500
+    updateTime()
+}
+
+startbtn.addEventListener('click', startTimer)
+pausebtn.addEventListener('click', pauseTimer)
+resetbtn.addEventListener('click', resetTimer)
+}
+pomodoroTimer()

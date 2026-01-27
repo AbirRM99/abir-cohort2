@@ -54,13 +54,19 @@ section.allElems {
     height: 100%;
     width: 100%;
     padding: 40px;
-    padding-top: 80px;
     display: flex;
     flex-wrap: wrap;
     align-items: flex-start;
     gap: 40px;
+    overflow: auto;
     position: absolute;
-    ;
+}
+
+.allElems .allFeatures{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 40px;
 }
 
 .elem {
@@ -321,19 +327,24 @@ section.allElems {
 }
 
 .motivational-fullpage {
-    display: block;
     position: relative;
 }
 
+.motivation-fullPage-container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .motivational-fullpage .motivational-container {
-    height: 300px;
+    height: 500px;
     width: 80%;
     border-radius: 50px;
-    position: absolute;
-    left: 50%;
-    top: 40%;
-    transform: translate(-50%, -50%);
+    position: relative;
 }
+
 .motivational-fullpage .motivational-container::after {
     content: '';
     width: 100%;
@@ -345,40 +356,49 @@ section.allElems {
     scale: 1.15;
     filter: blur(150px);
 }
-.motivational-fullpage .motivational-container .motivation-wrapper{
+
+.motivational-fullpage .motivational-container .motivation-wrapper {
     width: 100%;
     position: absolute;
     background-color: var(--tri1);
     z-index: 10;
     padding: 15px;
     border-radius: 30px;
+    border: 6px solid var(--tri2);
 }
-.motivation-1{
+
+.motivation-1 {
     background-color: var(--tri2);
     padding: 30px;
     border-radius: 20px;
+    width: fit-content;
 }
-.motivation-1 h2{
+
+.motivation-1 h2 {
     font-size: 40px;
     font-weight: 500;
-    text-align: center;
+    text-align: left;
 }
+
 .motivation-2 {
     margin-top: 20px;
     padding: 30px;
     margin-bottom: 20px;
 }
-.motivation-2 h1{
+
+.motivation-2 h1 {
     font-size: 50px;
     font-weight: 700;
     color: var(--sec);
 }
-.motivation-3{
+
+.motivation-3 {
     display: flex;
     align-items: center;
     justify-content: flex-end;
 }
-.motivation-3 h2{
+
+.motivation-3 h2 {
     background-color: var(--tri2);
     padding: 30px;
     border-radius: 20px;
@@ -386,10 +406,53 @@ section.allElems {
     font-weight: 500;
     text-align: right;
 }
-.motivational-fullpage .motivational-container .motivation-wrapper img{
+
+.motivational-fullpage .motivational-container .motivation-wrapper img {
     position: absolute;
     right: 5%;
-    top: 22%;
+    top: 10%;
     opacity: 0.2;
-    height: 60px;
+    height: 100px;
+}
+
+.pomodoro-fullpage {
+    position: relative;
+}
+
+.pomodoro-fullpage h2 {
+    font-size: 65px;
+}
+.pomodoro-fullpage .pomo-timer{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+}
+.pomo-timer h1{
+    font-size: 160px;
+}
+.pomo-timer button{
+    background-color: var(--tri2);
+    padding: 15px 40px;
+    font-size: 30px;
+    margin: 10px;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 7px 7px 0px black;
+    transition: all ease 0.1s;
+    font-weight: 700;
+}
+.pomo-timer button:active{
+    box-shadow: 0px 0px 0px black;
+}
+.pomodoro-fullpage .session{
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%,0);
+    background-color: rgb(9, 138, 89);
+    padding: 15px 30px;
+    font-size: 30px;
+    border-radius: 5px;
 }
