@@ -1,5 +1,5 @@
-function h1(){
-    return React.createElement('h1',{id:'box'},'Hello IM Abirrrr')
-}
+// function h1(){
+//     return React.createElement('h1',{id:'box'},'Hello IM Abirrrr')
+// }
 
-export default h1
+// export default h1

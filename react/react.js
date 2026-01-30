@@ -9,7 +9,9 @@
 // root.render(div)
 
 
-import h1 from "./test.js";
+// import h1 from "./test.js";
 
-var root = ReactDOM.createRoot(document.querySelector('.container'))
-root.render(h1())
+// var root = ReactDOM.createRoot(document.querySelector('.container'))
+// root.render(h1())
+
+
