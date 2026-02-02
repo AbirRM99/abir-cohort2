@@ -1,19 +1,1 @@
 @import "tailwindcss";
-
-body{
-  background-color: lightblue;
-}
-
-form{
-  padding: 20px;
-  background-color: #333;
-  display: flex;
-  gap: 20px;
-}
-input,button{
-  padding: 10px 20px;
-}
-button{
-  background-color: red;
-  width: fit-content;
-}
