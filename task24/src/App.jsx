@@ -7,11 +7,15 @@ const App = () => {
   const [imageURl, setImageURl] = useState('')
   const [userDesc, setUserDesc] = useState('')
 
-  const [allUsers, setAllUsers] = useState([])
+  const localData = JSON.parse(localStorage.getItem('all-user')) || []
+
+  const [allUsers, setAllUsers] = useState(localData)
 
   function submitHandler(e) {
     e.preventDefault()
-    setAllUsers([...allUsers, { username, userrole, imageURl, userDesc }])
+    const oldUsers = [...allUsers,{ username, userrole, imageURl, userDesc }]
+    setAllUsers(oldUsers)
+    localStorage.setItem('all-user',JSON.stringify(oldUsers))
 
 
     setImageURl('')
@@ -23,9 +27,15 @@ const App = () => {
 
   function deleteHandler(idx) {
     const copyUsers = [...allUsers]
-    copyUsers.splice(idx, 1)
 
+    const confrm = confirm('Are you sure , you want to delete this card??')
+    if(confrm){
+    copyUsers.splice(idx, 1)
+    }else{
+      alert('element not deleted')
+    }
     setAllUsers(copyUsers)
+    localStorage.setItem('all-user',JSON.stringify(copyUsers))
   }
   return (
     <div className='h-screen bg-black text-white'>
@@ -68,7 +78,7 @@ const App = () => {
       </form>
       <div className='px-4 py-10 gap-4 flex flex-wrap'>
         {allUsers.map(function (elem, idx) {
-          return <div key={idx} className='lg:w-[23vw] md:w-[30vw] sm:w-[45vw] py-8 px-8 flex items-center flex-col text-center rounded-xl bg-white text-black'>
+          return <div key={idx} className='lg:w-[18vw] md:w-[30vw] sm:w-[45vw] py-8 px-8 flex items-center flex-col text-center rounded-xl bg-white text-black'>
             <img className='h-25 w-25 rounded-full object-center object-cover' src={elem.imageURl} alt="" />
             <h1 className='text-2xl mt-2 font-bold'>{elem.username}</h1>
             <h5 className='text-lg text-blue-500 font-semibold my-2'>{elem.userrole}</h5>
