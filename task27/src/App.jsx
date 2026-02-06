@@ -10,6 +10,7 @@ import Course from './pages/Course'
 import AnyCourse from './pages/AnyCourse'
 import CourseDetail from './pages/CourseDetail'
 import NotFound from './pages/NotFound'
+import Footer from './components/Footer'
 
 const App = () => {
   return (
@@ -26,6 +27,8 @@ const App = () => {
         <Route path='/course/:id/details' element={<CourseDetail />}/>
         <Route path='/*' element={<NotFound />}/>
       </Routes>
+
+      <Footer />
     </div>
   )
 }
