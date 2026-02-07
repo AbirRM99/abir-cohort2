@@ -8,4 +8,53 @@
 html, body {
   height: 100%;
   width: 100%;
+  background-color: black;
+  color: white;
+}
+
+.product{
+  text-align: center;
+  background-color: white;
+  display: block;
+  width: 280px;
+  padding: 20px;
+  border-radius: 10px;
+  height: 310px;
+  text-decoration: none;
+}
+.product img{
+  height: 150px;
+
+}
+.allProducts{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  background-color: black;
+}
+.product h2{
+  font-size: 20px;
+  margin-top: 20px;
+}
+.home{
+  position: absolute;
+  top: 50vh;
+  left: 50vw;
+  transform: translate(-50%,-50%);
+  text-align: center;
+}
+.home h1{
+  font-size: 80px;  
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+.cta{
+  padding: 13px 25px;
+  background-color: lightseagreen;
+  color: white;
+  border: none;
+  font-size: 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
 }
