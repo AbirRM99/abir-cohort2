@@ -24,7 +24,6 @@ html, body {
 }
 .product img{
   height: 150px;
-
 }
 .allProducts{
   display: flex;

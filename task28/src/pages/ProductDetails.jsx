@@ -6,11 +6,14 @@ const ProductDetails = () => {
 
     const productData = useContext(ProductDataContext)
     const { productid } = useParams()
-    
 
-    const selectedProduct = productData.find((elem) => elem.id == productid)
-    console.log(selectedProduct);
-    
+
+    let selectedProduct = ''
+
+    if (productData.length > 0) {
+        selectedProduct = productData.find((elem) => productid == elem.id)
+    }
+
 
     return (
         <div>

@@ -6,7 +6,7 @@ const Product = () => {
 
     const productData = useContext(ProductDataContext)
 
-    let renderData = ''
+    let renderData = 'Loading...'
     if (productData.length > 0) {
         renderData = productData.map(function (elem, idx) {
             return <div>
