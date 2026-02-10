@@ -4,4 +4,55 @@
     bottom: 1rem;
     left: 50%;
     transform: translateX(-50%);
+    gap: 0.6rem;
+
+    background-color: rgb(67, 67, 67);
+    padding-inline: 1rem;
+    padding-block: 0.5rem;
+    border-radius: 0.75rem;
+    backdrop-filter: blur(5px);
+
+    .icon{
+        padding: 0.65rem;
+        border-radius: 0.5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        aspect-ratio: 1/1;
+        width: 3.5rem;
+        transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);    
+    }
+
+    .github,
+    .cli{
+        background-color: black;
+    }
+
+    .note{
+        background: linear-gradient(to bottom , rgb(249, 185, 105),rgb(253, 142, 6));
+    }
+    .pdf{
+        background: linear-gradient(to bottom , rgb(249, 76, 87),rgb(255, 25, 40));
+    }
+    .calendar,
+    .mail{
+        background: linear-gradient(to bottom , rgb(124, 115, 255),rgb(66, 52, 255));
+    }
+    .spotify{
+        background:linear-gradient(to bottom , rgb(78, 176, 33),rgb(53, 142, 12)) ;
+    }
+    .link{
+        background:linear-gradient(to bottom , rgb(163, 97, 170),rgb(142, 33, 150)) ;
+    }
+
+    .icon:hover{
+        transform: scale(1.25) translateY(-20%);
+    }
+
+    .icon:hover + .icon{
+        transform: scale(1.1) translateY(-10%);
+    }
+    .icon:has(+ .icon:hover){
+        transform: scale(1 ) translateY(-10%);
+    }
 }
