@@ -1,10 +1,30 @@
 import React from 'react'
-import {Rnd} from 'react-rnd'
+import { Rnd } from 'react-rnd'
+import "./window.scss"
 
-const MacWindow = () => {
+const MacWindow = ({children}) => {
   return (
-    <Rnd>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, illo dicta quia soluta porro nihil nesciunt saepe sapiente labore hic dolorem exercitationem totam in sunt quam non, ipsa, sed voluptas doloribus. Qui sequi hic, aliquam maiores vel architecto aperiam? Enim totam ad non fugiat aliquam tempora provident sequi accusamus! Nam atque fugit velit quasi. Quis laborum nemo voluptatem quae sunt.
+    <Rnd 
+    default={{
+      width:"40vw",
+      height:"40vh",
+      x:300,
+      y:200
+    }}>
+      <div className="window">
+        <div className="nav">
+          <div className="dots">
+            <div className="dot red"></div>
+            <div className="dot yellow"></div>
+            <div className="dot green"></div>
+          </div>
+            <div className="title"><p>abirchakravorty - zsh</p></div>
+        </div>
+        <div className="main-content">
+          {children}
+        </div>
+        
+      </div>
     </Rnd>
   )
 }
