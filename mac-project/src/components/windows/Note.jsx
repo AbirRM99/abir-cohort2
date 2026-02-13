@@ -6,7 +6,7 @@ import MacWindow from './MacWindow'
 import "./note.scss"
 
 
-const Note = () => {
+const Note = ({ windowName, windowState, setWindowState }) => {
 
     const [markdown, setMarkdown] = useState(null)
 
@@ -16,7 +16,7 @@ const Note = () => {
         .then(text => setMarkdown(text))
     },[])
   return (
-    <MacWindow>
+    <MacWindow windowName={windowName} windowState={windowState} setWindowState={setWindowState}>
         <div className="note-window">
             {markdown ? <SyntaxHighlighter language="typescript" style={atelierDuneDark}>{markdown}</SyntaxHighlighter> : <p>Loading...</p>}
         </div>
