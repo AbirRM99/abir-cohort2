@@ -327,3 +327,53 @@ function themeChanger() {
     })
 }
 themeChanger()
+
+function goalList() {
+    let form = document.querySelector('.addGoal form')
+    let goalInput = document.querySelector('.addGoal form #goal-input')
+    let goalDetailsInput = document.querySelector('.addGoal form textarea')
+    let goalCheckbox = document.querySelector('.addGoal form #check')
+
+    var currentGoal = []
+
+    if (localStorage.getItem('currentGoal')) {
+        currentGoal = JSON.parse(localStorage.getItem('currentGoal'));
+    } else {
+        console.log('Goal List is Empty');
+    }
+
+    function renderGoal() {
+        var allGoal = document.querySelector('.allGoal')
+        var sum = ''
+        currentGoal.forEach(function (elem, idx) {
+            sum += `<div class="goal">
+        <h5>${elem.goal} <span class=${elem.imp}>imp</span></h5>
+        <button id=${idx}>Mark as Completed</button>
+        </div>`
+        })
+        allGoal.innerHTML = sum
+        localStorage.setItem('currentGoal', JSON.stringify(currentGoal))
+
+        document.querySelectorAll('.goal button').forEach(function (btn) {
+            btn.addEventListener('click', function () {
+                currentGoal.splice(btn.id, 1);
+                renderGoal()
+            })
+        })
+
+    }
+    renderGoal()
+    form.addEventListener('submit', function (e) {
+        e.preventDefault()
+        // console.log(taskInput.value);
+        // console.log(taskDetailsInput.value);
+        // console.log(taskCheckbox.checked);      
+        currentGoal.push({ goal: goalInput.value, details: goalDetailsInput.value, imp: goalCheckbox.checked })
+        renderGoal()
+
+        goalCheckbox.checked = false
+        goalInput.value = ''
+        goalDetailsInput.value = ''
+    })
+}
+goalList()
