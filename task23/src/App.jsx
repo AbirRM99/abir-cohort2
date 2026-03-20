@@ -34,7 +34,7 @@ const App = () => {
   //   setNum('Leo Messi')
   // }
 
-  const [marks, setMarks] = useState([88, 69, 70, 54, 28])
+  const [marks, setMarks] = useState([88, 29, 70, 54, 28])
 
   
   function graceStudent() {
