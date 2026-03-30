@@ -18,9 +18,10 @@ const userSchema = new mongoose.Schema({
     bio: String,
     profileImage: {
         type: String,
-        default:"https://ik.imagekit.io/btuekn4kw/gray-picture-person-with-gray-background_1197690-22.avif"
+        default: "https://ik.imagekit.io/btuekn4kw/gray-picture-person-with-gray-background_1197690-22.avif"
     }
 })
-const userModel = mongoose.model("users",userSchema)
+
+const userModel = mongoose.model("users", userSchema)
 
 module.exports = userModel
