@@ -1,0 +1,79 @@
+.feed-page{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+
+    .feed{
+        max-width: 400px;
+        width: 100%;
+
+        .posts{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 0.1rem;
+        }
+
+        .post{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            padding-inline: 0.5rem;
+            padding-block: 0.5rem;
+            background-color: rgb(58, 58, 58);
+
+            .user{
+                display: flex;
+                gap: 0.5rem;
+                align-items: center;
+
+                .img-wrapper{
+                    border-radius: 50%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    border: 3px solid rgba(255, 0, 0, 0);
+                    background: conic-gradient(#f09433 0deg,#e6683c 60deg,#dc2743 120deg,#cc2366 180deg,#bc1888 240deg,#833ab4 300deg,#f09433 360deg) border-box;
+                }
+                img{
+                    width: 3rem;
+                    object-fit: cover;
+                    aspect-ratio: 1/1;
+                    border-radius: 50%;
+                }
+            }
+
+            .icons{
+                display: flex;
+                justify-content: space-between;
+                padding-inline: 0.4rem;
+
+                .left{
+                    display: flex;
+                    gap: 0.75rem;
+                }
+
+                .like{
+                    color: red;
+                }
+                svg{
+                    width: 1.6rem;
+                    aspect-ratio: 1/1;
+                    color: white;
+                }
+                button{
+                    background-color: transparent;
+                    border: none;
+                    outline: none;
+                }
+            }
+            img{
+                width: 100%;
+            }
+        }
+    }
+
+}

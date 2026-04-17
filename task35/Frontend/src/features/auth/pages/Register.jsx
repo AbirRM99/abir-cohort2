@@ -1,6 +1,9 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router'
+import "../styles/form.scss"
+import "../../../shared/style.scss"
+import { Link, useNavigate } from 'react-router'
 import axios from "axios"
+import { useAuth } from '../hooks/useAuth'
 
 const Register = () => {
 
@@ -8,10 +11,21 @@ const Register = () => {
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
 
+  const { user, loading, handleRegister } = useAuth()
+  const navigate = useNavigate()
+
+  if (loading) {
+    return (<main><h1>Loading...</h1></main>)
+  }
+
 
   async function handleSubmit(e) {
     e.preventDefault()
-    
+    await handleRegister(username, email, password)
+      .then(res => {
+        // console.log(res)
+        navigate("/")
+      })
   }
 
   return (
@@ -34,7 +48,7 @@ const Register = () => {
             type='text'
             name='password'
             placeholder='Enter password' />
-          <button type='submit'>Register</button>
+          <button className='button button-primary' type='submit'>Register</button>
         </form>
 
         <p>Already have an account? <Link className='toggleAuthForm' to="/login">Login</Link></p>
@@ -43,4 +57,4 @@ const Register = () => {
   )
 }
 
-export default Register
+export default Register 
