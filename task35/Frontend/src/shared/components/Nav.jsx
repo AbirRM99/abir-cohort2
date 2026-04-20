@@ -7,10 +7,10 @@ const Nav = () => {
     const navigate = useNavigate()
     return (
         <nav className='nav-bar'>
-            <p>Insta</p>
+            <p>InstaGram</p>
             <button
                 onClick={() => { navigate("/create-post") }}
-                className='button button-primary'>new post
+                className='button button-primary'>New Post
             </button>
         </nav>
     )

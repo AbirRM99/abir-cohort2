@@ -13,7 +13,7 @@ async function registerController(req, res) {
     })
     if (isUserAlreadyExist) {
         return res.status(409).json({
-            message: "user already exists" + (isUserAlreadyExist.email === email ? "Email already exist" : "username already exist")
+            message: (isUserAlreadyExist.email === email ? "Email already exist" : "username already exist")
         })
     }
     const hash = await bcrypt.hash(password, 10)

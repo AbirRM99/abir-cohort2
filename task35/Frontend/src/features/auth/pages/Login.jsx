@@ -9,6 +9,8 @@ const Login = () => {
 
   const [username, setUsername] = useState("")
   const [password, setPassword] = useState("")
+  const [error, setError] = useState("")
+
 
   const { user, handleLogin, loading } = useAuth()
   const navigate = useNavigate()
@@ -18,11 +20,12 @@ const Login = () => {
 
   async function handleSubmit(e) {
     e.preventDefault()
-
-    await handleLogin(username, password)
-      .then(res => {
-        navigate("/")
-      })
+    try {
+      await handleLogin(username, password)
+      navigate("/")
+    } catch (err) {
+      setError(err.response.data.message)
+    }
   }
 
 
@@ -41,6 +44,7 @@ const Login = () => {
             type='text'
             name='password'
             placeholder='Enter password' />
+          {error && <p className="error">{error}</p>}
           <button className='button button-primary' type='submit'>Login</button>
         </form>
 

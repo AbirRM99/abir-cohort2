@@ -1,14 +1,26 @@
 import React from 'react'
 
-const Post = ({ user, post,loading, handleLike, handleUnlike  }) => {
+const Post = ({ user, post, loading, handleLike, handleUnlike, handleFollow, handleUnFollow }) => {
 
     return (
         <div className="post">
-            <div className="user">
-                <div className="img-wrapper">
-                    <img src={user.profileImage} alt="" />
+            <div className="follow-user">
+                <div className="user">
+                    <div className="img-wrapper">
+                        <img src={user.profileImage} alt="" />
+                    </div>
+                    <p>{user.username}</p>
                 </div>
-                <p>{user.username}</p>
+                <button
+                    className='button button-primary'
+                    onClick={() =>
+                        {user.isFollowed
+                            ? handleUnFollow(user.username)
+                            : handleFollow(user.username)}
+                    }
+                >
+                    {user.isFollowed ? "Unfollow" : "Follow"}
+                </button>
             </div>
             <img src={post.imgUrl} alt="" />
             <div className="icons">

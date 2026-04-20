@@ -9,13 +9,13 @@ export const AuthProvider = ({ children }) => {
     const [loading, setLoading] = useState(false)
 
 
-    const handleLogin = async (username, password) => {
+    const handleLogin = async (username, password) => { 
         setLoading(true)
         try {
             const response = await login(username, password)
             setUser(response.user)
         } catch (err) { 
-            console.error(err)
+            throw err
         } finally {
             setLoading(false)
         }
@@ -28,7 +28,7 @@ export const AuthProvider = ({ children }) => {
             const response = await register(username, email, password)
             setUser(response.user)
         } catch (err) {
-            console.error(err)
+           throw err
         } finally {
             setLoading(false)
         }

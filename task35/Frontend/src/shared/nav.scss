@@ -1,7 +1,32 @@
-.nav-bar{
+.nav-bar {
     display: flex;
     justify-content: space-between;
+    align-items: center; /* Centers the logo and button vertically */
     width: 100%;
-    padding-inline: 1rem;
-    padding-block: 0.5rem;
+    padding-inline: 2rem; /* Slightly more breathing room on the sides */
+    padding-block: 1rem;
+    background-color: #1d1d1d; /* Explicitly match body background */
+    border-bottom: 1px solid #363636; /* Adds separation from the rest of the page */
+    position: sticky; /* Keeps it at the top when users scroll */
+    top: 0;
+    z-index: 100;
+
+    p{
+        width: 100px;
+        height: 30px;
+        border-radius: 10px;
+        color: whitesmoke;
+        text-align: center;
+
+
+        background: conic-gradient(
+                            #f09433 0deg,
+                            #e6683c 60deg,
+                            #dc2743 120deg,
+                            #cc2366 180deg,
+                            #bc1888 240deg,
+                            #833ab4 300deg,
+                            #f09433 360deg
+                        )
+    }
 }

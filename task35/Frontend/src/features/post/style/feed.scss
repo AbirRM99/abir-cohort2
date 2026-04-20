@@ -1,22 +1,21 @@
-.feed-page{
+.feed-page {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 
-
-    .feed{
+    .feed {
         max-width: 400px;
         width: 100%;
 
-        .posts{
+        .posts {
             width: 100%;
             display: flex;
             flex-direction: column;
             gap: 0.1rem;
         }
 
-        .post{
+        .post {
             width: 100%;
             display: flex;
             flex-direction: column;
@@ -24,21 +23,33 @@
             padding-inline: 0.5rem;
             padding-block: 0.5rem;
             background-color: rgb(58, 58, 58);
-
-            .user{
+            .follow-user {
                 display: flex;
-                gap: 0.5rem;
-                align-items: center;
+                justify-content: space-between;
+                .user {
+                    display: flex;
+                    gap: 0.5rem;
+                    align-items: center;
+                }
 
-                .img-wrapper{
+                .img-wrapper {
                     border-radius: 50%;
                     display: flex;
                     justify-content: center;
                     align-items: center;
                     border: 3px solid rgba(255, 0, 0, 0);
-                    background: conic-gradient(#f09433 0deg,#e6683c 60deg,#dc2743 120deg,#cc2366 180deg,#bc1888 240deg,#833ab4 300deg,#f09433 360deg) border-box;
+                    background: conic-gradient(
+                            #f09433 0deg,
+                            #e6683c 60deg,
+                            #dc2743 120deg,
+                            #cc2366 180deg,
+                            #bc1888 240deg,
+                            #833ab4 300deg,
+                            #f09433 360deg
+                        )
+                        border-box;
                 }
-                img{
+                img {
                     width: 3rem;
                     object-fit: cover;
                     aspect-ratio: 1/1;
@@ -46,34 +57,33 @@
                 }
             }
 
-            .icons{
+            .icons {
                 display: flex;
                 justify-content: space-between;
                 padding-inline: 0.4rem;
 
-                .left{
+                .left {
                     display: flex;
                     gap: 0.75rem;
                 }
 
-                .like{
+                .like {
                     color: red;
                 }
-                svg{
+                svg {
                     width: 1.6rem;
                     aspect-ratio: 1/1;
                     color: white;
                 }
-                button{
+                button {
                     background-color: transparent;
                     border: none;
                     outline: none;
                 }
             }
-            img{
+            img {
                 width: 100%;
             }
         }
     }
-
 }
